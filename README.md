@@ -9,8 +9,8 @@ In this project I extended a basic version of the [Snake Game](https://github.co
 ## Features
 - [x] Pause/Exit
    - The game now can be paused/resumed using `ESC` and exit using the `q` button  
-- [ ] Healthy Food
-   - Special food types lead to a shrinking of the snakes body
+- [x] Power Food
+   - Special food types prevent increasing of the snakes velocity
 - [ ] Random Obstacles
    - The game difficulty has been increased by randomly appearing obstacles that lead to a death at collision
 
