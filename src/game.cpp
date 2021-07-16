@@ -96,19 +96,17 @@ void Game::Update()
   }
 }
 
-// Pausing/resuming the game depending on currenty state
 void Game::TriggerPause()
 {
+  // If game is paused, resume it, otherwise pause the game
   this->_paused ? Resume() : Pause();
 }
 
-// Pause the game
 void Game::Pause()
 {
   this->_paused = true;
 }
 
-// Resume the game
 void Game::Resume()
 {
   this->_paused = false;

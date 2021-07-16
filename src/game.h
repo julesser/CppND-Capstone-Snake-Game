@@ -15,13 +15,13 @@ public:
            std::size_t target_frame_duration);
   int GetScore() const;
   int GetSize() const;
-  void TriggerPause(); // pausing/resuming the game depending on currenty state
+  void TriggerPause(); // Pausing/resuming the game depending on currenty state
 
 private:
   Snake snake;
   SDL_Point food;
 
-  bool _paused; // pause game state; true if game currently is paused
+  bool _paused; // Indicates if game is in paused state; true if game currently is paused
 
   std::random_device dev;
   std::mt19937 engine;
@@ -32,8 +32,8 @@ private:
 
   void PlaceFood();
   void Update();
-  void Pause();
-  void Resume();
+  void Pause();  // Pause the game
+  void Resume(); // Resume the game
 };
 
 #endif
