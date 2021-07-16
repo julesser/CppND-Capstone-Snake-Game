@@ -28,7 +28,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake, *this);
     Update();
-    renderer.Render(snake, food);
+    renderer.Render(snake, food, _powerFood);
 
     frame_end = SDL_GetTicks();
 
@@ -62,6 +62,10 @@ void Game::PlaceFood()
   {
     x = random_w(engine);
     y = random_h(engine);
+
+    // Set probability of power food to 25%
+    _powerFood = (rand() % 100) < 75;
+
     // Check that the location is not occupied by a snake item before placing
     // food.
     if (!snake.SnakeCell(x, y))
@@ -90,9 +94,13 @@ void Game::Update()
   {
     score++;
     PlaceFood();
-    // Grow snake and increase speed.
+    // Grow snake
     snake.GrowBody();
-    snake.speed += 0.02;
+    // Increase speed only when not powerFood
+    if (!_powerFood)
+    {
+      snake.speed += 0.02;
+    }
   }
 }
 

@@ -21,7 +21,8 @@ private:
   Snake snake;
   SDL_Point food;
 
-  bool _paused; // Indicates if game is in paused state; true if game currently is paused
+  bool _paused;    // Indicates if game is in paused state; true if game currently is paused
+  bool _powerFood; // Indicates food status; true if food currently is healthy
 
   std::random_device dev;
   std::mt19937 engine;
