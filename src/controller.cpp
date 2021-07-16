@@ -25,6 +25,11 @@ void Controller::HandleInput(bool &running, Snake &snake, Game &game) const
     {
       switch (e.key.keysym.sym)
       {
+      // Terminate the game via pressing the "q" button
+      case SDLK_q:
+        running = false;
+        break;
+
       case SDLK_UP:
         ChangeDirection(snake, Snake::Direction::kUp,
                         Snake::Direction::kDown);
