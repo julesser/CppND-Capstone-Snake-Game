@@ -1,18 +1,18 @@
-# CPPND: Capstone Snake Game Example
+# CPPND: Capstone Snake Game
 
 This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
+In this project I extended a basic version of the [Snake Game](https://github.com/udacity/CppND-Capstone-Snake-Game) with additional [Features](#features) by following the principles I learned throughout the C++ Nanodegree Program (see [Rubric Points](#rubric-points)).
+
 <img src="snake_game.gif"/>
 
-In this project I extended the [Snake Game](https://github.com/udacity/CppND-Capstone-Snake-Game) by following the principles I learned throughout the C++ Nanodegree Program (see [Rubric Points](#rubric-points)).
-
 ## Features
-- [ ]  Pause/Stop
-   - The game now can be paused/resumed using `ESC` and stopped using the `q` button  
+- [x] Pause/Exit
+   - The game now can be paused/resumed using `ESC` and exit using the `q` button  
+- [ ] Healthy Food
+   - Special food types lead to a shrinking of the snakes body
 - [ ] Random Obstacles
    - The game difficulty has been increased by randomly appearing obstacles that lead to a death at collision
-- [ ] Super Food
-   - Some foods are lead to a shrinking of the snakes body if accessed within a given time 
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
