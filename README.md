@@ -4,9 +4,15 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+In this project I extended the [Snake Game](https://github.com/udacity/CppND-Capstone-Snake-Game) by following the principles I learned throughout the C++ Nanodegree Program (see [Rubric Points](#rubric-points)).
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+## Features
+- [ ]  Pause/Stop
+   - The game now can be paused/resumed using `ESC` and stopped using the `q` button  
+- [ ] Random Obstacles
+   - The game difficulty has been increased by randomly appearing obstacles that lead to a death at collision
+- [ ] Super Food
+   - Some foods are lead to a shrinking of the snakes body if accessed within a given time 
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -30,6 +36,19 @@ In this project, you can build your own C++ application or extend this Snake gam
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
 
+## Rubric Points
+
+#### Loops, Functions, I/O
+- [ ] The project demonstrates an understanding of C++ functions and control structures.
+- [ ] The project accepts user input and processes the input.
+
+#### Object Oriented Programming
+- [ ] The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+- [ ] All class data members are explicitly specified as public, protected, or private.
+- [ ] All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
+
+#### Memory Management
+- [ ] The project makes use of references in function declarations.
 
 ## CC Attribution-ShareAlike 4.0 International
 
