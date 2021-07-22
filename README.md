@@ -4,7 +4,7 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 
 In this project I extended a basic version of the [Snake Game](https://github.com/udacity/CppND-Capstone-Snake-Game) with additional [Features](#features) by following the principles I learned throughout the C++ Nanodegree Program (see [Rubric Points](#rubric-points)).
 
-<img src="snake_game.gif"/>
+<img src="snake_game_proposed.gif"/>
 
 ## Features
 - [x] Pause/Exit
