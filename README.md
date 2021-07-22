@@ -11,8 +11,8 @@ In this project I extended a basic version of the [Snake Game](https://github.co
    - The game now can be paused/resumed using `ESC` and exit using the `q` button  
 - [x] Power Food
    - Special food types prevent increasing of the snakes velocity
-- [ ] Random Obstacles
-   - The game difficulty has been increased by randomly appearing obstacles that lead to a death at collision
+- [x] Random Obstacles
+   - The user can increase the game difficulty by speciying a number of obstacles. These are randomly appearing and lead to a death at collision
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -39,16 +39,19 @@ In this project I extended a basic version of the [Snake Game](https://github.co
 ## Rubric Points
 
 #### Loops, Functions, I/O
-- [ ] The project demonstrates an understanding of C++ functions and control structures.
-- [ ] The project accepts user input and processes the input.
+- [x] The project demonstrates an understanding of C++ functions and control structures.
+- [x] The project accepts user input and processes the input.
 
 #### Object Oriented Programming
-- [ ] The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
-- [ ] All class data members are explicitly specified as public, protected, or private.
-- [ ] All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
+- [x] The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+- [x] All class data members are explicitly specified as public, protected, or private.
+- [x] All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
 
 #### Memory Management
-- [ ] The project makes use of references in function declarations.
+- [x] The project makes use of references in function declarations.
+
+#### Concurrency
+- [ ] Due to time constraints, these have not been integrated at this stage. 
 
 ## CC Attribution-ShareAlike 4.0 International
 
