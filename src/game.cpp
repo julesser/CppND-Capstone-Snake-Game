@@ -2,13 +2,15 @@
 #include <iostream>
 #include "SDL.h"
 
-Game::Game(std::size_t grid_width, std::size_t grid_height)
+Game::Game(std::size_t grid_width, std::size_t grid_height, int num_of_obstacles)
     : snake(grid_width, grid_height),
+      obstacles(num_of_obstacles),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
       random_h(0, static_cast<int>(grid_height - 1))
 {
   PlaceFood();
+  PlaceObstacles();
 }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -55,6 +57,37 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   }
 }
 
+bool Game::isOccupiedCell(int x, int y)
+{
+  return snake.SnakeCell(x, y) || obstacles.isObstacleCell(x, y);
+}
+
+void Game::PlaceObstacles()
+{
+  int x, y;
+  int num_obstacles = 0;
+
+  while (num_obstacles < obstacles.number_of_obstacles)
+  {
+    while (true)
+    {
+      SDL_Point obstacle;
+      x = random_w(engine);
+      y = random_h(engine);
+      // Check that the location is not occupied by a snake item before placing
+      // food.
+      if (!isOccupiedCell(x, y))
+      {
+        obstacle.x = x;
+        obstacle.y = y;
+        obstacles.items.push_back(obstacle);
+        num_obstacles++;
+        break;
+      }
+    }
+  }
+}
+
 void Game::PlaceFood()
 {
   int x, y;
@@ -68,7 +101,7 @@ void Game::PlaceFood()
 
     // Check that the location is not occupied by a snake item before placing
     // food.
-    if (!snake.SnakeCell(x, y))
+    if (!isOccupiedCell(x, y))
     {
       food.x = x;
       food.y = y;
@@ -77,10 +110,24 @@ void Game::PlaceFood()
   }
 }
 
+bool Game::isSnakeOnObstacle()
+{
+  for (auto const &item : obstacles.items)
+  {
+    if (snake.SnakeCell(item.x, item.y))
+      return true;
+  }
+  return false;
+}
+
 void Game::Update()
 {
   if (this->_paused == true)
     return;
+  if (isSnakeOnObstacle())
+  {
+    snake.alive = false;
+  }
   if (!snake.alive)
     return;
 
